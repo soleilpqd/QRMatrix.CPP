@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+### CMake
+CMakeLists.txt.user
+
+build
+build-*
+xcuserdata
+*.xcuserdatad

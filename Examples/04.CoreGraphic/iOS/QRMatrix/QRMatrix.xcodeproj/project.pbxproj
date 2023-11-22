@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B6BD9872AF25421005C70E5 /* QRMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6BD9862AF25421005C70E5 /* QRMatrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B6BD9B92AF2555A005C70E5 /* QRMatrixLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6BD9B72AF2555A005C70E5 /* QRMatrixLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B6BD9BA2AF2555A005C70E5 /* QRMatrixLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BD9B82AF2555A005C70E5 /* QRMatrixLib.mm */; };
+		2B6BDA072AF26444005C70E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BDA062AF26444005C70E5 /* UIKit.framework */; };
+		2B6BDA092AF2645C005C70E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BDA082AF2645B005C70E5 /* CoreGraphics.framework */; };
+		2BADFE682B065D4400A7A25F /* latinstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE432B065D4400A7A25F /* latinstring.cpp */; };
+		2BADFE692B065D4400A7A25F /* latinstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE442B065D4400A7A25F /* latinstring.h */; };
+		2BADFE6A2B065D4400A7A25F /* shiftjisstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE452B065D4400A7A25F /* shiftjisstring.cpp */; };
+		2BADFE6B2B065D4400A7A25F /* shiftjisstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE462B065D4400A7A25F /* shiftjisstring.h */; };
+		2BADFE6C2B065D4400A7A25F /* shiftjisstringmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE472B065D4400A7A25F /* shiftjisstringmap.cpp */; };
+		2BADFE6D2B065D4400A7A25F /* shiftjisstringmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE482B065D4400A7A25F /* shiftjisstringmap.h */; };
+		2BADFE6E2B065D4400A7A25F /* unicodepoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE492B065D4400A7A25F /* unicodepoint.cpp */; };
+		2BADFE6F2B065D4400A7A25F /* unicodepoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE4A2B065D4400A7A25F /* unicodepoint.h */; };
+		2BADFE702B065D4400A7A25F /* utf16string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE4B2B065D4400A7A25F /* utf16string.cpp */; };
+		2BADFE712B065D4400A7A25F /* utf16string.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE4C2B065D4400A7A25F /* utf16string.h */; };
+		2BADFE722B065D4400A7A25F /* utf8string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE4D2B065D4400A7A25F /* utf8string.cpp */; };
+		2BADFE732B065D4400A7A25F /* utf8string.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE4E2B065D4400A7A25F /* utf8string.h */; };
+		2BADFE742B065D4400A7A25F /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE502B065D4400A7A25F /* common.cpp */; };
+		2BADFE752B065D4400A7A25F /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE512B065D4400A7A25F /* common.h */; };
+		2BADFE762B065D4400A7A25F /* constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE522B065D4400A7A25F /* constants.h */; };
+		2BADFE772B065D4400A7A25F /* alphanumericencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE542B065D4400A7A25F /* alphanumericencoder.cpp */; };
+		2BADFE782B065D4400A7A25F /* alphanumericencoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE552B065D4400A7A25F /* alphanumericencoder.h */; };
+		2BADFE792B065D4400A7A25F /* kanjiencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE562B065D4400A7A25F /* kanjiencoder.cpp */; };
+		2BADFE7A2B065D4400A7A25F /* kanjiencoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE572B065D4400A7A25F /* kanjiencoder.h */; };
+		2BADFE7B2B065D4400A7A25F /* numericencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE582B065D4400A7A25F /* numericencoder.cpp */; };
+		2BADFE7C2B065D4400A7A25F /* numericencoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE592B065D4400A7A25F /* numericencoder.h */; };
+		2BADFE7D2B065D4400A7A25F /* qrmatrixexception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE5B2B065D4400A7A25F /* qrmatrixexception.cpp */; };
+		2BADFE7E2B065D4400A7A25F /* qrmatrixexception.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE5C2B065D4400A7A25F /* qrmatrixexception.h */; };
+		2BADFE7F2B065D4400A7A25F /* polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE5E2B065D4400A7A25F /* polynomial.cpp */; };
+		2BADFE802B065D4400A7A25F /* polynomial.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE5F2B065D4400A7A25F /* polynomial.h */; };
+		2BADFE812B065D4400A7A25F /* qrmatrixboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE602B065D4400A7A25F /* qrmatrixboard.cpp */; };
+		2BADFE822B065D4400A7A25F /* qrmatrixboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE612B065D4400A7A25F /* qrmatrixboard.h */; };
+		2BADFE832B065D4400A7A25F /* qrmatrixencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE622B065D4400A7A25F /* qrmatrixencoder.cpp */; };
+		2BADFE842B065D4400A7A25F /* qrmatrixencoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE632B065D4400A7A25F /* qrmatrixencoder.h */; };
+		2BADFE852B065D4400A7A25F /* qrmatrixextramode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE642B065D4400A7A25F /* qrmatrixextramode.cpp */; };
+		2BADFE862B065D4400A7A25F /* qrmatrixextramode.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE652B065D4400A7A25F /* qrmatrixextramode.h */; };
+		2BADFE872B065D4400A7A25F /* qrmatrixsegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BADFE662B065D4400A7A25F /* qrmatrixsegment.cpp */; };
+		2BADFE882B065D4400A7A25F /* qrmatrixsegment.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BADFE672B065D4400A7A25F /* qrmatrixsegment.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2B6BD9832AF25421005C70E5 /* QRMatrix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QRMatrix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6BD9862AF25421005C70E5 /* QRMatrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRMatrix.h; sourceTree = "<group>"; };
+		2B6BD9B72AF2555A005C70E5 /* QRMatrixLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRMatrixLib.h; sourceTree = "<group>"; };
+		2B6BD9B82AF2555A005C70E5 /* QRMatrixLib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QRMatrixLib.mm; sourceTree = "<group>"; };
+		2B6BDA062AF26444005C70E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2B6BDA082AF2645B005C70E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		2BADFE432B065D4400A7A25F /* latinstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = latinstring.cpp; sourceTree = "<group>"; };
+		2BADFE442B065D4400A7A25F /* latinstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = latinstring.h; sourceTree = "<group>"; };
+		2BADFE452B065D4400A7A25F /* shiftjisstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shiftjisstring.cpp; sourceTree = "<group>"; };
+		2BADFE462B065D4400A7A25F /* shiftjisstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shiftjisstring.h; sourceTree = "<group>"; };
+		2BADFE472B065D4400A7A25F /* shiftjisstringmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shiftjisstringmap.cpp; sourceTree = "<group>"; };
+		2BADFE482B065D4400A7A25F /* shiftjisstringmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shiftjisstringmap.h; sourceTree = "<group>"; };
+		2BADFE492B065D4400A7A25F /* unicodepoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unicodepoint.cpp; sourceTree = "<group>"; };
+		2BADFE4A2B065D4400A7A25F /* unicodepoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unicodepoint.h; sourceTree = "<group>"; };
+		2BADFE4B2B065D4400A7A25F /* utf16string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utf16string.cpp; sourceTree = "<group>"; };
+		2BADFE4C2B065D4400A7A25F /* utf16string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf16string.h; sourceTree = "<group>"; };
+		2BADFE4D2B065D4400A7A25F /* utf8string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utf8string.cpp; sourceTree = "<group>"; };
+		2BADFE4E2B065D4400A7A25F /* utf8string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8string.h; sourceTree = "<group>"; };
+		2BADFE502B065D4400A7A25F /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
+		2BADFE512B065D4400A7A25F /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		2BADFE522B065D4400A7A25F /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		2BADFE542B065D4400A7A25F /* alphanumericencoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = alphanumericencoder.cpp; sourceTree = "<group>"; };
+		2BADFE552B065D4400A7A25F /* alphanumericencoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alphanumericencoder.h; sourceTree = "<group>"; };
+		2BADFE562B065D4400A7A25F /* kanjiencoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kanjiencoder.cpp; sourceTree = "<group>"; };
+		2BADFE572B065D4400A7A25F /* kanjiencoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kanjiencoder.h; sourceTree = "<group>"; };
+		2BADFE582B065D4400A7A25F /* numericencoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numericencoder.cpp; sourceTree = "<group>"; };
+		2BADFE592B065D4400A7A25F /* numericencoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numericencoder.h; sourceTree = "<group>"; };
+		2BADFE5B2B065D4400A7A25F /* qrmatrixexception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qrmatrixexception.cpp; sourceTree = "<group>"; };
+		2BADFE5C2B065D4400A7A25F /* qrmatrixexception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrmatrixexception.h; sourceTree = "<group>"; };
+		2BADFE5E2B065D4400A7A25F /* polynomial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polynomial.cpp; sourceTree = "<group>"; };
+		2BADFE5F2B065D4400A7A25F /* polynomial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = polynomial.h; sourceTree = "<group>"; };
+		2BADFE602B065D4400A7A25F /* qrmatrixboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qrmatrixboard.cpp; sourceTree = "<group>"; };
+		2BADFE612B065D4400A7A25F /* qrmatrixboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrmatrixboard.h; sourceTree = "<group>"; };
+		2BADFE622B065D4400A7A25F /* qrmatrixencoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qrmatrixencoder.cpp; sourceTree = "<group>"; };
+		2BADFE632B065D4400A7A25F /* qrmatrixencoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrmatrixencoder.h; sourceTree = "<group>"; };
+		2BADFE642B065D4400A7A25F /* qrmatrixextramode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qrmatrixextramode.cpp; sourceTree = "<group>"; };
+		2BADFE652B065D4400A7A25F /* qrmatrixextramode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrmatrixextramode.h; sourceTree = "<group>"; };
+		2BADFE662B065D4400A7A25F /* qrmatrixsegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qrmatrixsegment.cpp; sourceTree = "<group>"; };
+		2BADFE672B065D4400A7A25F /* qrmatrixsegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrmatrixsegment.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B6BD9802AF25421005C70E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B6BDA092AF2645C005C70E5 /* CoreGraphics.framework in Frameworks */,
+				2B6BDA072AF26444005C70E5 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B6BD9792AF25421005C70E5 = {
+			isa = PBXGroup;
+			children = (
+				2B6BD9852AF25421005C70E5 /* QRMatrix */,
+				2B6BD9842AF25421005C70E5 /* Products */,
+				2B6BDA052AF26444005C70E5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2B6BD9842AF25421005C70E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B6BD9832AF25421005C70E5 /* QRMatrix.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B6BD9852AF25421005C70E5 /* QRMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				2B6BD9862AF25421005C70E5 /* QRMatrix.h */,
+				2B6BD9B72AF2555A005C70E5 /* QRMatrixLib.h */,
+				2B6BD9B82AF2555A005C70E5 /* QRMatrixLib.mm */,
+				2BADFE4F2B065D4400A7A25F /* QRMatrix */,
+				2BADFE422B065D4400A7A25F /* String */,
+			);
+			path = QRMatrix;
+			sourceTree = "<group>";
+		};
+		2B6BDA052AF26444005C70E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B6BDA082AF2645B005C70E5 /* CoreGraphics.framework */,
+				2B6BDA062AF26444005C70E5 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BADFE422B065D4400A7A25F /* String */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFE432B065D4400A7A25F /* latinstring.cpp */,
+				2BADFE442B065D4400A7A25F /* latinstring.h */,
+				2BADFE452B065D4400A7A25F /* shiftjisstring.cpp */,
+				2BADFE462B065D4400A7A25F /* shiftjisstring.h */,
+				2BADFE472B065D4400A7A25F /* shiftjisstringmap.cpp */,
+				2BADFE482B065D4400A7A25F /* shiftjisstringmap.h */,
+				2BADFE492B065D4400A7A25F /* unicodepoint.cpp */,
+				2BADFE4A2B065D4400A7A25F /* unicodepoint.h */,
+				2BADFE4B2B065D4400A7A25F /* utf16string.cpp */,
+				2BADFE4C2B065D4400A7A25F /* utf16string.h */,
+				2BADFE4D2B065D4400A7A25F /* utf8string.cpp */,
+				2BADFE4E2B065D4400A7A25F /* utf8string.h */,
+			);
+			name = String;
+			path = ../../../../../String;
+			sourceTree = "<group>";
+		};
+		2BADFE4F2B065D4400A7A25F /* QRMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFE502B065D4400A7A25F /* common.cpp */,
+				2BADFE512B065D4400A7A25F /* common.h */,
+				2BADFE522B065D4400A7A25F /* constants.h */,
+				2BADFE532B065D4400A7A25F /* Encoder */,
+				2BADFE5A2B065D4400A7A25F /* Exception */,
+				2BADFE5D2B065D4400A7A25F /* Polynomial */,
+				2BADFE602B065D4400A7A25F /* qrmatrixboard.cpp */,
+				2BADFE612B065D4400A7A25F /* qrmatrixboard.h */,
+				2BADFE622B065D4400A7A25F /* qrmatrixencoder.cpp */,
+				2BADFE632B065D4400A7A25F /* qrmatrixencoder.h */,
+				2BADFE642B065D4400A7A25F /* qrmatrixextramode.cpp */,
+				2BADFE652B065D4400A7A25F /* qrmatrixextramode.h */,
+				2BADFE662B065D4400A7A25F /* qrmatrixsegment.cpp */,
+				2BADFE672B065D4400A7A25F /* qrmatrixsegment.h */,
+			);
+			name = QRMatrix;
+			path = ../../../../../QRMatrix;
+			sourceTree = "<group>";
+		};
+		2BADFE532B065D4400A7A25F /* Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFE542B065D4400A7A25F /* alphanumericencoder.cpp */,
+				2BADFE552B065D4400A7A25F /* alphanumericencoder.h */,
+				2BADFE562B065D4400A7A25F /* kanjiencoder.cpp */,
+				2BADFE572B065D4400A7A25F /* kanjiencoder.h */,
+				2BADFE582B065D4400A7A25F /* numericencoder.cpp */,
+				2BADFE592B065D4400A7A25F /* numericencoder.h */,
+			);
+			path = Encoder;
+			sourceTree = "<group>";
+		};
+		2BADFE5A2B065D4400A7A25F /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFE5B2B065D4400A7A25F /* qrmatrixexception.cpp */,
+				2BADFE5C2B065D4400A7A25F /* qrmatrixexception.h */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		2BADFE5D2B065D4400A7A25F /* Polynomial */ = {
+			isa = PBXGroup;
+			children = (
+				2BADFE5E2B065D4400A7A25F /* polynomial.cpp */,
+				2BADFE5F2B065D4400A7A25F /* polynomial.h */,
+			);
+			path = Polynomial;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2B6BD97E2AF25421005C70E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BADFE762B065D4400A7A25F /* constants.h in Headers */,
+				2BADFE732B065D4400A7A25F /* utf8string.h in Headers */,
+				2BADFE752B065D4400A7A25F /* common.h in Headers */,
+				2BADFE692B065D4400A7A25F /* latinstring.h in Headers */,
+				2BADFE6D2B065D4400A7A25F /* shiftjisstringmap.h in Headers */,
+				2BADFE822B065D4400A7A25F /* qrmatrixboard.h in Headers */,
+				2BADFE6B2B065D4400A7A25F /* shiftjisstring.h in Headers */,
+				2BADFE712B065D4400A7A25F /* utf16string.h in Headers */,
+				2BADFE862B065D4400A7A25F /* qrmatrixextramode.h in Headers */,
+				2B6BD9B92AF2555A005C70E5 /* QRMatrixLib.h in Headers */,
+				2BADFE7E2B065D4400A7A25F /* qrmatrixexception.h in Headers */,
+				2BADFE782B065D4400A7A25F /* alphanumericencoder.h in Headers */,
+				2BADFE882B065D4400A7A25F /* qrmatrixsegment.h in Headers */,
+				2BADFE7C2B065D4400A7A25F /* numericencoder.h in Headers */,
+				2BADFE7A2B065D4400A7A25F /* kanjiencoder.h in Headers */,
+				2B6BD9872AF25421005C70E5 /* QRMatrix.h in Headers */,
+				2BADFE802B065D4400A7A25F /* polynomial.h in Headers */,
+				2BADFE842B065D4400A7A25F /* qrmatrixencoder.h in Headers */,
+				2BADFE6F2B065D4400A7A25F /* unicodepoint.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2B6BD9822AF25421005C70E5 /* QRMatrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B6BD98A2AF25421005C70E5 /* Build configuration list for PBXNativeTarget "QRMatrix" */;
+			buildPhases = (
+				2B6BD97E2AF25421005C70E5 /* Headers */,
+				2B6BD97F2AF25421005C70E5 /* Sources */,
+				2B6BD9802AF25421005C70E5 /* Frameworks */,
+				2B6BD9812AF25421005C70E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRMatrix;
+			productName = QRMatrix;
+			productReference = 2B6BD9832AF25421005C70E5 /* QRMatrix.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B6BD97A2AF25421005C70E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2B6BD9822AF25421005C70E5 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 2B6BD97D2AF25421005C70E5 /* Build configuration list for PBXProject "QRMatrix" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B6BD9792AF25421005C70E5;
+			productRefGroup = 2B6BD9842AF25421005C70E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B6BD9822AF25421005C70E5 /* QRMatrix */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B6BD9812AF25421005C70E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B6BD97F2AF25421005C70E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BADFE872B065D4400A7A25F /* qrmatrixsegment.cpp in Sources */,
+				2BADFE772B065D4400A7A25F /* alphanumericencoder.cpp in Sources */,
+				2BADFE6A2B065D4400A7A25F /* shiftjisstring.cpp in Sources */,
+				2BADFE7F2B065D4400A7A25F /* polynomial.cpp in Sources */,
+				2BADFE702B065D4400A7A25F /* utf16string.cpp in Sources */,
+				2B6BD9BA2AF2555A005C70E5 /* QRMatrixLib.mm in Sources */,
+				2BADFE792B065D4400A7A25F /* kanjiencoder.cpp in Sources */,
+				2BADFE832B065D4400A7A25F /* qrmatrixencoder.cpp in Sources */,
+				2BADFE852B065D4400A7A25F /* qrmatrixextramode.cpp in Sources */,
+				2BADFE7D2B065D4400A7A25F /* qrmatrixexception.cpp in Sources */,
+				2BADFE682B065D4400A7A25F /* latinstring.cpp in Sources */,
+				2BADFE812B065D4400A7A25F /* qrmatrixboard.cpp in Sources */,
+				2BADFE742B065D4400A7A25F /* common.cpp in Sources */,
+				2BADFE6E2B065D4400A7A25F /* unicodepoint.cpp in Sources */,
+				2BADFE7B2B065D4400A7A25F /* numericencoder.cpp in Sources */,
+				2BADFE6C2B065D4400A7A25F /* shiftjisstringmap.cpp in Sources */,
+				2BADFE722B065D4400A7A25F /* utf8string.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B6BD9882AF25421005C70E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B6BD9892AF25421005C70E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2B6BD98B2AF25421005C70E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../QRMatrix\"";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pqd.soleil.QRMatrix;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B6BD98C2AF25421005C70E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../QRMatrix\"";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pqd.soleil.QRMatrix;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B6BD97D2AF25421005C70E5 /* Build configuration list for PBXProject "QRMatrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B6BD9882AF25421005C70E5 /* Debug */,
+				2B6BD9892AF25421005C70E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B6BD98A2AF25421005C70E5 /* Build configuration list for PBXNativeTarget "QRMatrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B6BD98B2AF25421005C70E5 /* Debug */,
+				2B6BD98C2AF25421005C70E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B6BD97A2AF25421005C70E5 /* Project object */;
+}
