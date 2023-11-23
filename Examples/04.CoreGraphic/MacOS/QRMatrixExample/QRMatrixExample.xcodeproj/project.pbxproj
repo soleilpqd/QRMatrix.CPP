@@ -11,6 +11,8 @@
 		2B6BDA2D2AF2753F005C70E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6BDA2C2AF2753F005C70E5 /* ViewController.swift */; };
 		2B6BDA2F2AF27540005C70E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BDA2E2AF27540005C70E5 /* Assets.xcassets */; };
 		2B6BDA322AF27540005C70E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6BDA302AF27540005C70E5 /* Main.storyboard */; };
+		2BFB0EB12B0F9D25004722D2 /* QRMatrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BDA4B2AF27672005C70E5 /* QRMatrix.framework */; };
+		2BFB0EB22B0F9D25004722D2 /* QRMatrix.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6BDA4B2AF27672005C70E5 /* QRMatrix.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2BFB0EB32B0F9D25004722D2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BFB0EB22B0F9D25004722D2 /* QRMatrix.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2B6BDA272AF2753F005C70E5 /* QRMatrixExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRMatrixExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6BDA2A2AF2753F005C70E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFB0EB12B0F9D25004722D2 /* QRMatrix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +74,7 @@
 				2B6BDA462AF27672005C70E5 /* QRMatrix.xcodeproj */,
 				2B6BDA292AF2753F005C70E5 /* QRMatrixExample */,
 				2B6BDA282AF2753F005C70E5 /* Products */,
+				2BFB0EB02B0F9D25004722D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +106,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2BFB0EB02B0F9D25004722D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,6 +123,7 @@
 				2B6BDA232AF2753F005C70E5 /* Sources */,
 				2B6BDA242AF2753F005C70E5 /* Frameworks */,
 				2B6BDA252AF2753F005C70E5 /* Resources */,
+				2BFB0EB32B0F9D25004722D2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
