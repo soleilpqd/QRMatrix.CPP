@@ -26,28 +26,28 @@
 #include "../QRMatrix/constants.h"
 #include "unicodepoint.h"
 
+#define UTF8_SINGLE_BYTE_MASK       0b10000000
+#define UTF8_SINGLE_BYTE_PREFIX     0b00000000
+#define UTF8_DOUBLE_BYTES_MASK      0b11100000
+#define UTF8_DOUBLE_BYTES_PREFIX    0b11000000
+#define UTF8_TRIPLE_BYTES_MASK      0b11110000
+#define UTF8_TRIPLE_BYTES_PREFIX    0b11100000
+#define UTF8_QUADRUPLE_BYTES_MASK   0b11111000
+#define UTF8_QUADRUPLE_BYTES_PREFIX 0b11110000
+
+#define UTF8_SECONDARY_BYTE_MASK    0b11000000
+#define UTF8_SECONDARY_BYTE_PREFIX  0b10000000
+
+#define UTF8_SINGLE_BYTE_LAST_CODE_POINT        0x0000007F
+#define UTF8_DOUBLE_BYTES_LAST_CODE_POINT       0x000007FF
+#define UTF8_TRIPLE_BYTES_LAST_CODE_POINT       0x0000FFFF
+#define UTF8_QUADRUPLE_BYTES_LAST_CODE_POINT    0x0010FFFF
+
 namespace QRMatrix {
 
     /// Handle unicode (UTF-8) from std::string
     class Utf8String{
     public:
-        static inline UnsignedByte singleByteMask()        { return 0b10000000; }
-        static inline UnsignedByte singleBytePrefix()      { return 0b00000000; }
-        static inline UnsignedByte doubleBytesMask()       { return 0b11100000; }
-        static inline UnsignedByte doubleBytesPrefix()     { return 0b11000000; }
-        static inline UnsignedByte tripleBytesMask()       { return 0b11110000; }
-        static inline UnsignedByte tripleBytesPrefix()     { return 0b11100000; }
-        static inline UnsignedByte quadrupleBytesMask()    { return 0b11111000; }
-        static inline UnsignedByte quadrupleBytesPrefix()  { return 0b11110000; }
-
-        static inline UnsignedByte secondaryByteMask()     { return 0b11000000; }
-        static inline UnsignedByte secondaryBytePrefix()   { return 0b10000000; }
-
-        static inline Unsigned4Bytes singleByteLastCodePoint()      { return 0x0000007F; }
-        static inline Unsigned4Bytes doubleBytesLastCodePoint()     { return 0x000007FF; }
-        static inline Unsigned4Bytes tripleBytesLastCodePoint()     { return 0x0000FFFF; }
-        static inline Unsigned4Bytes quadrupleBytesLastCodePoint()  { return 0x0010FFFF; }
-
         ~Utf8String();
         Utf8String(Utf8String &other);
         /// Init from bytes of UTF-8 encoded string.

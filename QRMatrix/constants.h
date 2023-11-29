@@ -33,6 +33,20 @@ using UnsignedByte      = unsigned char;
 using Unsigned2Bytes    = unsigned short;
 using Unsigned4Bytes    = unsigned int;
 
+/// Maximum QR version
+#define QR_MAX_VERSION          40
+/// Different dimension amount between 2 sequential versions
+#define QR_VERSION_OFFSET       4
+/// QR minimum dimension
+#define QR_MIN_DIMENSION        21
+
+/// Maximum MicroQR version
+#define MICROQR_MAX_VERSION     4
+/// Different dimension amount between 2 sequential micro versions
+#define MICROQR_VERSION_OFFSET  2
+/// Micro QR minimum dimension
+#define MICROQR_MIN_DIMENSION   11
+
 namespace QRMatrix {
 
     /// QR Encoding Mode
@@ -58,20 +72,6 @@ namespace QRMatrix {
         /// H 30%
         high = 0b10
     };
-
-    /// Maximum QR version
-    const UnsignedByte maximumVersion = 40;
-    /// Different dimension amount between 2 sequential versions
-    const UnsignedByte versionsOffset = 4;
-    /// QR minimum dimension
-    const UnsignedByte minimumDimension = 21;
-
-    /// Maximum MicroQR version
-    const UnsignedByte maximumMicroVersion = 4;
-    /// Different dimension amount between 2 sequential micro versions
-    const UnsignedByte versionsMicroOffset = 2;
-    /// Micro QR minimum dimension
-    const UnsignedByte minimumMicroDimension = 11;
 
 }
 

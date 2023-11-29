@@ -48,16 +48,16 @@ Utf8String::Utf8String(Utf8String &other) {
 }
 
 Utf8String::Utf8String(const UnsignedByte* raw, const unsigned int length) {
-    UnsignedByte singleMask = singleByteMask();
-    UnsignedByte singlePrefix = singleBytePrefix();
-    UnsignedByte doubleMask = doubleBytesMask();
-    UnsignedByte doublePrefix = doubleBytesPrefix();
-    UnsignedByte tripleMask = tripleBytesMask();
-    UnsignedByte triplePrefix = tripleBytesPrefix();
-    UnsignedByte quadrupleMask = quadrupleBytesMask();
-    UnsignedByte quadruplePrefix = quadrupleBytesPrefix();
-    UnsignedByte secondaryMask = secondaryByteMask();
-    UnsignedByte secondaryPrefix = secondaryBytePrefix();
+    UnsignedByte singleMask         = UTF8_SINGLE_BYTE_MASK;
+    UnsignedByte singlePrefix       = UTF8_SINGLE_BYTE_PREFIX;
+    UnsignedByte doubleMask         = UTF8_DOUBLE_BYTES_MASK;
+    UnsignedByte doublePrefix       = UTF8_DOUBLE_BYTES_PREFIX;
+    UnsignedByte tripleMask         = UTF8_TRIPLE_BYTES_MASK;
+    UnsignedByte triplePrefix       = UTF8_TRIPLE_BYTES_PREFIX;
+    UnsignedByte quadrupleMask      = UTF8_QUADRUPLE_BYTES_MASK;
+    UnsignedByte quadruplePrefix    = UTF8_QUADRUPLE_BYTES_PREFIX;
+    UnsignedByte secondaryMask      = UTF8_SECONDARY_BYTE_MASK;
+    UnsignedByte secondaryPrefix    = UTF8_SECONDARY_BYTE_PREFIX;
 
     isValid_ = false;
     charCount_ = 0;
@@ -104,18 +104,18 @@ unsigned char* Utf8String_encode(UnsignedByte* codePtr, UnsignedByte* destPtr, c
     unsigned char prefix = 0;
     switch (charSize) {
     case 2:
-        prefix = Utf8String::doubleBytesPrefix();
+        prefix = UTF8_DOUBLE_BYTES_PREFIX;
         break;
     case 3:
-        prefix = Utf8String::tripleBytesPrefix();
+        prefix = UTF8_TRIPLE_BYTES_PREFIX;
         break;
     case 4:
-        prefix = Utf8String::quadrupleBytesPrefix();
+        prefix = UTF8_QUADRUPLE_BYTES_PREFIX;
         break;
     default:
         break;
     }
-    UnsignedByte secondaryPrefix = Utf8String::secondaryBytePrefix();
+    UnsignedByte secondaryPrefix = UTF8_SECONDARY_BYTE_PREFIX;
     unsigned int prefixBitLen = charSize + 1;
     const unsigned int sourceSize = 4 * 8;
     // Fist byte
@@ -136,9 +136,9 @@ unsigned char* Utf8String_encode(UnsignedByte* codePtr, UnsignedByte* destPtr, c
 }
 
 Utf8String::Utf8String(UnicodePoint unicodes) {
-    Unsigned4Bytes singleByteLastCode = singleByteLastCodePoint();
-    Unsigned4Bytes doubleBytesLastCode = doubleBytesLastCodePoint();
-    Unsigned4Bytes tripleBytesLastCode = tripleBytesLastCodePoint();
+    Unsigned4Bytes singleByteLastCode  = UTF8_SINGLE_BYTE_LAST_CODE_POINT;
+    Unsigned4Bytes doubleBytesLastCode = UTF8_DOUBLE_BYTES_LAST_CODE_POINT;
+    Unsigned4Bytes tripleBytesLastCode = UTF8_TRIPLE_BYTES_LAST_CODE_POINT;
     const Unsigned4Bytes* codes = unicodes.unicodePoints();
 
     unsigned int length = unicodes.charactersCount();

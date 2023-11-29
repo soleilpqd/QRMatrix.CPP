@@ -25,13 +25,14 @@
 
 #include "../constants.h"
 
+#define NUM_TRIPLE_DIGITS_BITS_LEN 10
+#define NUM_DOUBLE_DIGITS_BITS_LEN  7
+#define NUM_SINGLE_DIGIT_BITS_LEN   4
+
 namespace QRMatrix {
 
     class NumericEncoder {
     public:
-        static inline int tripleDigitsBitsLength() { return 10; }
-        static inline int doubleDigitsBitsLength() { return 7; }
-        static inline int singleDigitBitsLength() { return 4; }
 
         /// Encode text.
         /// @return Number of written bits.

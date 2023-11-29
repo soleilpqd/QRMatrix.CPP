@@ -22,6 +22,8 @@
 
 #import <AppKit/AppKit.h>
 
+#define DEFAULT_ECI 3
+
 typedef NS_ENUM( NSUInteger, QRErrorCorrectionLevel ) {
     ecLow,
     ecMedium,

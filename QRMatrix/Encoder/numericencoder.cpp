@@ -45,13 +45,13 @@ unsigned int NumericEncoder::encode(const UnsignedByte* text, unsigned int lengt
         unsigned int bitLen;
         switch (groupLen) {
         case 3:
-            bitLen = NumericEncoder::tripleDigitsBitsLength();
+            bitLen = NUM_TRIPLE_DIGITS_BITS_LEN;
             break;
         case 2:
-            bitLen = NumericEncoder::doubleDigitsBitsLength();
+            bitLen = NUM_DOUBLE_DIGITS_BITS_LEN;
             break;
         case 1:
-            bitLen = NumericEncoder::singleDigitBitsLength();
+            bitLen = NUM_SINGLE_DIGIT_BITS_LEN;
             break;
         default:
             bitLen = 0;

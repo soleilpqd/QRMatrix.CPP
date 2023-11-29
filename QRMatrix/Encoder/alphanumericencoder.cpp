@@ -45,7 +45,7 @@ unsigned int AlphaNumericEncoder::encodedValueOfPair(const UnsignedByte* pair, u
         return value1;
     }
     unsigned int value2 = AlphaNumericEncoder::indexOfCharacter(pair[1]);
-    return value1 * AlphaNumericEncoder::alphaNumericMultiplication() + value2;
+    return value1 * ALPHA_NUM_MULTIPLICATION + value2;
 }
 
 unsigned int AlphaNumericEncoder::encode(const UnsignedByte* text, unsigned int length, UnsignedByte* buffer, unsigned int startIndex) {
@@ -60,10 +60,10 @@ unsigned int AlphaNumericEncoder::encode(const UnsignedByte* text, unsigned int 
         if (offset > 1) {
             charCount = 2;
             pair[1] = text[index + 1];
-            encodedLen = AlphaNumericEncoder::pairCharactersBitsLength();
+            encodedLen = ALPHA_NUM_PAIR_CHARS_BITS_LEN;
         } else {
             charCount = 1;
-            encodedLen = AlphaNumericEncoder::singleCharacterBitsLenth();
+            encodedLen = ALPHA_NUM_SINGLE_CHAR_BITS_LEN;
         }
         index += charCount;
         unsigned int encodedData = AlphaNumericEncoder::encodedValueOfPair(pair, charCount);

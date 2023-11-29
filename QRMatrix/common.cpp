@@ -96,7 +96,7 @@ ErrorCorrectionInfo ErrorCorrectionInfo::errorCorrectionInfo(UnsignedByte versio
         {{2956, 30, 19, 118,  6, 119}, {2334, 28, 18,  47, 31,  48}, {1666, 30, 34,  24, 34,  25}, {1276, 30, 20,  15, 61,  16}}
     };
     int versionIndex = version - 1;
-    if (versionIndex < 0 || versionIndex >= maximumVersion) {
+    if (versionIndex < 0 || versionIndex >= QR_MAX_VERSION) {
         return ErrorCorrectionInfo();
     }
     int levelIndex = ErrorCorrectionInfo_convertLevelToIndex(level);
@@ -112,7 +112,7 @@ ErrorCorrectionInfo ErrorCorrectionInfo::microErrorCorrectionInfo(UnsignedByte v
         {{ 16, 8 }, { 14, 10 }, { 10, 13 }, { 0, 0 }},
     };
     int versionIndex = version - 1;
-    if (versionIndex < 0 || versionIndex >= maximumMicroVersion) {
+    if (versionIndex < 0 || versionIndex >= MICROQR_MAX_VERSION) {
         return ErrorCorrectionInfo();
     }
     int levelIndex = ErrorCorrectionInfo_convertLevelToIndex(level);
@@ -202,7 +202,7 @@ unsigned int Common::microCharactersCountIndicatorLength(UnsignedByte version, E
 }
 
 unsigned int Common::microModeIndicatorLength(UnsignedByte version, EncodingMode mode) {
-    if (version < 1 || version > maximumMicroVersion) {
+    if (version < 1 || version > MICROQR_MAX_VERSION) {
         return 0;
     }
     switch (mode) {
@@ -218,7 +218,7 @@ unsigned int Common::microModeIndicatorLength(UnsignedByte version, EncodingMode
 }
 
 unsigned int Common::microTerminatorLength(UnsignedByte version) {
-    if (version < 1 || version > maximumMicroVersion) {
+    if (version < 1 || version > MICROQR_MAX_VERSION) {
         return 0;
     }
     return version * 2 + 1;
@@ -395,7 +395,7 @@ void Common::copyBits(
 }
 
 const UnsignedByte* Common::alignmentLocations(UnsignedByte version) {
-    if (version < 2 || version > maximumVersion) {
+    if (version < 2 || version > QR_MAX_VERSION) {
         throw QR_EXCEPTION("Version must be 2...40");
     }
     static const UnsignedByte data[][6] = {

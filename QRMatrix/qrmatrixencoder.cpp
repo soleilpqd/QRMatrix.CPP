@@ -69,15 +69,15 @@ unsigned int QRMatrixEncoder_calculateEncodedDataBitsCount(
         case EncodingMode::numeric: {
             // 3 characters encoded in 10 bits (each character is 1 byte)
             unsigned int numberOfGroups = (segment.length() / 3);
-            totalDataBitsCount += numberOfGroups * NumericEncoder::tripleDigitsBitsLength();
+            totalDataBitsCount += numberOfGroups * NUM_TRIPLE_DIGITS_BITS_LEN;
             // Remaining chars
             UnsignedByte remainChars = segment.length() % 3;
             switch (remainChars) {
             case 1:
-                totalDataBitsCount += NumericEncoder::singleDigitBitsLength();
+                totalDataBitsCount += NUM_SINGLE_DIGIT_BITS_LEN;
                 break;
             case 2:
-                totalDataBitsCount += NumericEncoder::doubleDigitsBitsLength();
+                totalDataBitsCount += NUM_DOUBLE_DIGITS_BITS_LEN;
             default:
                 break;
             }
@@ -88,8 +88,8 @@ unsigned int QRMatrixEncoder_calculateEncodedDataBitsCount(
             // Remaining character encoded in 6 bits.
             unsigned int numberOfGroups = segment.length() / 2;
             unsigned int remaining = segment.length() % 2;
-            totalDataBitsCount += AlphaNumericEncoder::pairCharactersBitsLength() * numberOfGroups +
-                                  AlphaNumericEncoder::singleCharacterBitsLenth() * remaining;
+            totalDataBitsCount += ALPHA_NUM_PAIR_CHARS_BITS_LEN * numberOfGroups +
+                                  ALPHA_NUM_SINGLE_CHAR_BITS_LEN * remaining;
         }
         break;
         case EncodingMode::kanji:
@@ -127,7 +127,7 @@ ErrorCorrectionInfo QRMatrixEncoder_findVersion(
     }
     // Go for each version, get total bits and check
     bool isMicro = (extraMode.mode == EncodingExtraMode::microQr && !isStructuredAppend);
-    UnsignedByte maxVer = isMicro ? maximumMicroVersion : maximumVersion;
+    UnsignedByte maxVer = isMicro ? MICROQR_MAX_VERSION : QR_MAX_VERSION;
     for (UnsignedByte version = (minVersion > 0 && minVersion <= maxVer) ? minVersion : 1; version <= maxVer; version += 1) {
         if (version > 1 && isMicro && level == ErrorCorrectionLevel::high) {
             throw QR_EXCEPTION("Error Correction Level High not available in MicroQR.");

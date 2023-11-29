@@ -66,23 +66,23 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Numeric mode
         queue.addOperation {[weak self] in
-            self?.genQR(text: "12345678901234567", mode: .mNumeric, isLatin1: false, eci: 0, isMicro: false)
+            self?.genQR(text: "12345678901234567", mode: .mNumeric, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: false)
         }
         // AlphaNumeric mode
         queue.addOperation {[weak self] in
-            self?.genQR(text: "ABC$ 67890", mode: .mAlphaNumeric, isLatin1: false, eci: 0, isMicro: false)
+            self?.genQR(text: "ABC$ 67890", mode: .mAlphaNumeric, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: false)
         }
         // Byte mode using standard encoding (Latin1)
         queue.addOperation {[weak self] in
-            self?.genQR(text: "L1! ©Ââ", mode: .mByte, isLatin1: true, eci: 0, isMicro: false)
+            self?.genQR(text: "L1! ©Ââ", mode: .mByte, isLatin1: true, eci: UInt(DEFAULT_ECI), isMicro: false)
         }
         // Kanji mode (using ShiftJIS)
         queue.addOperation {[weak self] in
-            self?.genQR(text: "０Ａあア", mode: .mKanji, isLatin1: false, eci: 0, isMicro: false)
+            self?.genQR(text: "０Ａあア", mode: .mKanji, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: false)
         }
         // Byte mode using UTF-8 directly
         queue.addOperation {[weak self] in
-            self?.genQR(text: "Hello world!\nXin chào thế giới!\nこんにちは世界！\n안녕하세요!\n你好世界！", mode: .mByte, isLatin1: false, eci: 0, isMicro: false)
+            self?.genQR(text: "Hello world!\nXin chào thế giới!\nこんにちは世界！\n안녕하세요!\n你好世界！", mode: .mByte, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: false)
         }
         // ECI mode with UTF-8 encoding
         queue.addOperation {[weak self] in
@@ -102,7 +102,7 @@ class ViewController: NSViewController {
         // Mixed
         queue.addOperation {[weak self] in
             guard let data1 = "ABC123 ".data(using: .ascii) else { return }
-            let segment1 = QRSegment(data1, mode: .mAlphaNumeric, eci: 0)
+            let segment1 = QRSegment(data1, mode: .mAlphaNumeric, eci: UInt(DEFAULT_ECI))
             let data2 = Data([0xBE, 0xC8, 0xB3, 0xE7, 0xC7, 0xCF, 0xBC, 0xBC, 0xBF, 0xE4, 0x21]); // "안녕하세요!" EUC-KR sequence
             let segment2 = QRSegment(data2, mode: .mByte, eci: 30)
             do {
@@ -124,19 +124,19 @@ class ViewController: NSViewController {
         // MICRO QR
         // Numeric mode
         queue.addOperation {[weak self] in
-            self?.genQR(text: "12345", mode: .mNumeric, isLatin1: false, eci: 0, isMicro: true)
+            self?.genQR(text: "12345", mode: .mNumeric, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: true)
         }
         // AlphaNumeric mode
         queue.addOperation {[weak self] in
-            self?.genQR(text: "A12345", mode: .mAlphaNumeric, isLatin1: false, eci: 0, isMicro: true)
+            self?.genQR(text: "A12345", mode: .mAlphaNumeric, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: true)
         }
         // Byte mode
         queue.addOperation {[weak self] in
-            self?.genQR(text: "안녕", mode: .mNumeric, isLatin1: false, eci: 0, isMicro: true)
+            self?.genQR(text: "안녕", mode: .mNumeric, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: true)
         }
         // Kanji mode (with ShiftJIS encoding)
         queue.addOperation {[weak self] in
-            self?.genQR(text: "Ａあア０", mode: .mKanji, isLatin1: false, eci: 0, isMicro: true)
+            self?.genQR(text: "Ａあア０", mode: .mKanji, isLatin1: false, eci: UInt(DEFAULT_ECI), isMicro: true)
         }
         // Auto Mixed
         queue.addOperation {[weak self] in
@@ -152,8 +152,8 @@ class ViewController: NSViewController {
             guard let data1 = "01049123451234591597033130128".data(using: .ascii),
                   let data2 = "%10ABC123".data(using: .ascii)
             else { return }
-            let segment1 = QRSegment(data1, mode: .mNumeric, eci: 0)
-            let segment2 = QRSegment(data2, mode: .mAlphaNumeric, eci: 0)
+            let segment1 = QRSegment(data1, mode: .mNumeric, eci: UInt(DEFAULT_ECI))
+            let segment2 = QRSegment(data2, mode: .mAlphaNumeric, eci: UInt(DEFAULT_ECI))
             let extra = QRExtraData(.mFnc1First)
             do {
                 let image = try QRMatrixLib.makeQR([segment1, segment2], errorCorrectionLevel: .ecHigh, scale: 10, extra: extra);
@@ -167,8 +167,8 @@ class ViewController: NSViewController {
             guard let data1 = "AA1234BBB112".data(using: .ascii),
                   let data2 = "text text text text\n".data(using: .ascii)
             else { return }
-            let segment1 = QRSegment(data1, mode: .mAlphaNumeric, eci: 0)
-            let segment2 = QRSegment(data2, mode: .mByte, eci: 0)
+            let segment1 = QRSegment(data1, mode: .mAlphaNumeric, eci: UInt(DEFAULT_ECI))
+            let segment2 = QRSegment(data2, mode: .mByte, eci: UInt(DEFAULT_ECI))
             let extra = QRExtraData.fnc1Second("37")
             do {
                 let image = try QRMatrixLib.makeQR([segment1, segment2], errorCorrectionLevel: .ecHigh, scale: 10, extra: extra);
@@ -184,10 +184,10 @@ class ViewController: NSViewController {
                   let data21 = "345".data(using: .ascii),
                   let data22 = "DEF".data(using: .ascii)
             else { return }
-            let segment11 = QRSegment(data11, mode: .mNumeric, eci: 0)
-            let segment12 = QRSegment(data12, mode: .mAlphaNumeric, eci: 0)
-            let segment21 = QRSegment(data21, mode: .mNumeric, eci: 0)
-            let segment22 = QRSegment(data22, mode: .mAlphaNumeric, eci: 0)
+            let segment11 = QRSegment(data11, mode: .mNumeric, eci: UInt(DEFAULT_ECI))
+            let segment12 = QRSegment(data12, mode: .mAlphaNumeric, eci: UInt(DEFAULT_ECI))
+            let segment21 = QRSegment(data21, mode: .mNumeric, eci: UInt(DEFAULT_ECI))
+            let segment22 = QRSegment(data22, mode: .mAlphaNumeric, eci: UInt(DEFAULT_ECI))
             let part1 = QRStructuredAppend([segment11, segment12], errorCorrectionLevel: .ecHigh, extra: nil)
             let part2 = QRStructuredAppend([segment21, segment22], errorCorrectionLevel: .ecHigh, extra: nil)
             do {

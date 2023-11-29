@@ -25,13 +25,14 @@
 
 #include "../constants.h"
 
+#define ALPHA_NUM_MULTIPLICATION    45
+#define ALPHA_NUM_PAIR_CHARS_BITS_LEN         11
+#define ALPHA_NUM_SINGLE_CHAR_BITS_LEN         6
+
 namespace QRMatrix {
 
     class AlphaNumericEncoder {
     public:
-        static inline int alphaNumericMultiplication() { return 45; }
-        static inline int pairCharactersBitsLength() { return 11; }
-        static inline int singleCharacterBitsLenth() { return 6; }
 
         /// Index of character in QR AlphaNumeric table.
         /// @ref: C++ std::string::find.

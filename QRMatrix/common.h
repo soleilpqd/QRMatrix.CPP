@@ -82,9 +82,9 @@ namespace QRMatrix {
         static bool isLittleEndian;
 
         /// Get QR dimension by its version (version in 1...40 ~ dimension 21...177).
-        static inline UnsignedByte dimensionByVersion(UnsignedByte version) { return (version - 1) * versionsOffset + minimumDimension; }
+        static inline UnsignedByte dimensionByVersion(UnsignedByte version) { return (version - 1) * QR_VERSION_OFFSET + QR_MIN_DIMENSION; }
         /// Get MicroQR dimension by its version (version in 1...4 ~ dimension 11...17).
-        static inline UnsignedByte microDimensionByVersion(UnsignedByte version) { return (version - 1) * versionsMicroOffset + minimumMicroDimension; }
+        static inline UnsignedByte microDimensionByVersion(UnsignedByte version) { return (version - 1) * MICROQR_VERSION_OFFSET + MICROQR_MIN_DIMENSION; }
 
         /// Number of bits for character counts indicator.
         static unsigned int charactersCountIndicatorLength(
