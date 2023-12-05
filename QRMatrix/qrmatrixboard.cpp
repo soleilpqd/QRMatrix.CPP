@@ -365,51 +365,34 @@ void QRMatrixBoard_placeData(
     bool isCompleted = false;
 
     while (column >= 0 && !isCompleted) {
+        int startValue = 0;
+        int endValue = board->dimension() - 1;
+        int step = 1;
         if (isUpward) {
-            for (int row = board->dimension() - 1; row >= 0 && !isCompleted; row -= 1) {
-                if (buffer[row][column] == BoardCell::neutral) {
-                    QRMatrixBoard_fillDataBit(
-                        board, data, errorCorrection, phase,
-                        &byteIndex, &bitIndex, row, column
+            startValue = board->dimension() - 1;
+            endValue = 0;
+            step = -1;
+        }
+        for (int row = startValue; (isUpward ? row >= endValue : row <= endValue) && !isCompleted; row += step) {
+            if (buffer[row][column] == BoardCell::neutral) {
+                QRMatrixBoard_fillDataBit(
+                    board, data, errorCorrection, phase,
+                    &byteIndex, &bitIndex, row, column
                     );
-                    isCompleted = QRMatrixBoard_checkFilledBit(
-                        &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
-                        &bitIndex, &phase, remainderCount
+                isCompleted = QRMatrixBoard_checkFilledBit(
+                    &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
+                    &bitIndex, &phase, remainderCount
                     );
-                }
-                if (column > 0 && buffer[row][column - 1] == BoardCell::neutral) {
-                    QRMatrixBoard_fillDataBit(
-                        board, data, errorCorrection, phase,
-                        &byteIndex, &bitIndex, row, column - 1
-                    );
-                    isCompleted = QRMatrixBoard_checkFilledBit(
-                        &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
-                        &bitIndex, &phase, remainderCount
-                    );
-                }
             }
-        } else {
-            for (int row = 0; row < board->dimension() && !isCompleted; row += 1) {
-                if (buffer[row][column] == BoardCell::neutral) {
-                    QRMatrixBoard_fillDataBit(
-                        board, data, errorCorrection, phase,
-                        &byteIndex, &bitIndex, row, column
+            if (column > 0 && buffer[row][column - 1] == BoardCell::neutral) {
+                QRMatrixBoard_fillDataBit(
+                    board, data, errorCorrection, phase,
+                    &byteIndex, &bitIndex, row, column - 1
                     );
-                    isCompleted = QRMatrixBoard_checkFilledBit(
-                        &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
-                        &bitIndex, &phase, remainderCount
+                isCompleted = QRMatrixBoard_checkFilledBit(
+                    &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
+                    &bitIndex, &phase, remainderCount
                     );
-                }
-                if (column > 0 && buffer[row][column - 1] == BoardCell::neutral) {
-                    QRMatrixBoard_fillDataBit(
-                        board, data, errorCorrection, phase,
-                        &byteIndex, &bitIndex, row, column - 1
-                    );
-                    isCompleted = QRMatrixBoard_checkFilledBit(
-                        &bitCount, dataBitTotal, ecBitTotal, &byteIndex,
-                        &bitIndex, &phase, remainderCount
-                    );
-                }
             }
         }
         column -= 2;
@@ -430,6 +413,7 @@ UnsignedByte** QRMatrixBoard_mask(QRMatrixBoard* board, UnsignedByte maskNum) {
         for (UnsignedByte column = 0; column < board->dimension(); column += 1) {
             UnsignedByte byte = buffer[row][column];
             UnsignedByte low = byte & BoardCell::lowMask;
+            UnsignedByte high = byte & BoardCell::highMask;
             bool isFunc = (byte & BoardCell::funcMask) > 0;
             if (isFunc) {
                 result[row][column] = byte;
@@ -440,7 +424,7 @@ UnsignedByte** QRMatrixBoard_mask(QRMatrixBoard* board, UnsignedByte maskNum) {
             } else if (low == BoardCell::unset) {
                 low = BoardCell::set;
             }
-            UnsignedByte maskedByte = low;
+            UnsignedByte maskedByte = low | high;
             switch (maskNum) {
             case 0:
                 if (((row + column) % 2) == 0) {
